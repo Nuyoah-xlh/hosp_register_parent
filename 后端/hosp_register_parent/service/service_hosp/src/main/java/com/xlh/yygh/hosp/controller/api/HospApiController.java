@@ -42,6 +42,7 @@ public class HospApiController {
     @GetMapping("/findHospList/{page}/{limit}")
     public Result findHospList(@PathVariable Integer page, @PathVariable Integer limit, HospitalQueryVo hospitalQueryVo){
         Page<Hospital> hospitalPage=hospitalService.selectHospPage(page,limit,hospitalQueryVo);
+        System.out.println(hospitalPage);
         return Result.ok(hospitalPage);
     }
 
